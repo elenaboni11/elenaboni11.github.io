@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Personal portfolio and projects of Your Name." />
+  <meta property="og:title" content="Your Name — Portfolio" />
+  <meta property="og:description" content="Personal portfolio and projects of Your Name." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='80'%3E✨%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #0a0a0a;
+      --muted: #666;
+      --accent: #0a0a0a; /* change if you want a color */
+      --border: #eaeaea;
+      --maxw: 880px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0b0b0b; --fg: #ededed; --muted: #b0b0b0; --border: #1f1f1f; }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--fg);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+    a.underline { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
+    header {
+      position: sticky; top: 0; z-index: 20; backdrop-filter: saturate(180%) blur(8px);
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { font-weight: 700; letter-spacing: 0.2px; }
+    .nav a { opacity: 0.9; }
+    .nav a:hover { opacity: 1; }
+    .nav-links { display: flex; gap: 16px; align-items: center; }
+
+    /* Mobile nav */
+    #menuBtn { display: none; }
+    @media (max-width: 640px) {
+      #menuBtn { display: inline-flex; border: 1px solid var(--border); padding: 8px 10px; border-radius: 999px; }
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; padding: 8px 0 0; }
+    }
+
+    .hero { padding: 56px 0 24px; }
+    .hero h1 { font-size: clamp(28px, 4.5vw, 48px); line-height: 1.1; margin: 0 0 8px; }
+    .hero p { margin: 0; color: var(--muted); font-size: clamp(16px, 2.2vw, 18px); }
+
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .card { grid-column: span 12; border: 1px solid var(--border); border-radius: 14px; overflow: clip; background: color-mix(in srgb, var(--bg) 96%, #fff 4%); transition: transform .15s ease, box-shadow .15s ease; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,.06); }
+    .card a { display: block; padding: 18px; }
+    .card .title { font-weight: 600; }
+    .card .meta { color: var(--muted); font-size: 14px; margin-top: 4px; }
+
+    @media (min-width: 680px) { .card { grid-column: span 6; } }
+
+    .section { padding: 32px 0; }
+    .section h2 { font-size: 18px; font-weight: 700; margin: 0 0 12px; letter-spacing: 0.3px; text-transform: uppercase; }
+
+    .prose { max-width: 64ch; }
+    .prose p { margin: 0 0 12px; }
+
+    .gallery { display: grid; gap: 8px; grid-template-columns: repeat(12, 1fr); }
+    .gallery img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--border); }
+    .gallery .g1 { grid-column: span 12; }
+    .gallery .g2 { grid-column: span 12; }
+    .gallery .g3 { grid-column: span 12; }
+    @media (min-width: 740px) {
+      .gallery .g1 { grid-column: span 6; }
+      .gallery .g2 { grid-column: span 3; }
+      .gallery .g3 { grid-column: span 3; }
+    }
+
+    footer { border-top: 1px solid var(--border); margin-top: 40px; }
+    .foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 0; color: var(--muted); font-size: 14px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top">Your Name</a>
+      <button id="menuBtn" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+      <nav class="nav-links" id="mobileNav" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero" aria-labelledby="intro-title">
+      <h1 id="intro-title">Your Name</h1>
+      <p>Short role/description — e.g., Researcher & Policy Analyst based in Rome. I work at the intersection of migration, education, and social policy.</p>
+    </section>
+
+    <section id="work" class="section" aria-labelledby="work-title">
+      <h2 id="work-title">Selected Work</h2>
+      <div class="grid">
+        <article class="card">
+          <a href="#" target="_blank" rel="noopener">
+            <div class="title">Project Title One</div>
+            <div class="meta">Short one‑liner about the project. Year → 2025</div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="#" target="_blank" rel="noopener">
+            <div class="title">Project Title Two</div>
+            <div class="meta">What it is, who for, outcome. Year → 2024</div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="#" target="_blank" rel="noopener">
+            <div class="title">Paper / Publication</div>
+            <div class="meta">Journal or venue — with a link. Year → 2023</div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="#" target="_blank" rel="noopener">
+            <div class="title">Speaking / Teaching</div>
+            <div class="meta">Course, talk, or workshop — details + link</div>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="gallery-title">
+      <h2 id="gallery-title">Images</h2>
+      <div class="gallery">
+        <img class="g1" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=60" alt="Example image 1" loading="lazy" />
+        <img class="g2" src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=1200&auto=format&fit=crop&q=60" alt="Example image 2" loading="lazy" />
+        <img class="g3" src="https://images.unsplash.com/photo-1499002238440-d264edd596ec?w=1200&auto=format&fit=crop&q=60" alt="Example image 3" loading="lazy" />
+      </div>
+    </section>
+
+    <section id="about" class="section prose" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <p>Write a concise bio (4–6 lines). Focus on what you do now, your interests, and what you’re open to. Keep it simple and direct.</p>
+      <p>Optionally highlight 2–3 achievements or roles. Keep the tone matter‑of‑fact.</p>
+    </section>
+
+    <section id="contact" class="section prose" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p>Email: <a class="underline" href="mailto:you@yourdomain.com">you@yourdomain.com</a></p>
+      <p>Also on: <a class="underline" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a> · <a class="underline" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a> · <a class="underline" href="https://x.com/" target="_blank" rel="noopener">X</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <span>© <span id="y"></span> Your Name</span>
+      <a class="underline" href="#top" aria-label="Back to top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const btn = document.getElementById('menuBtn');
+    const nav = document.getElementById('mobileNav');
+    btn?.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Smooth scroll for in-page anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (!id || id === '#') return;
+        const el = document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        nav.classList.remove('open');
+        btn?.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Year in footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
