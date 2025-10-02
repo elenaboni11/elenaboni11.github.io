@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elena Boni — Research</title>
+  <style>
+    body { margin:0; font-family: system-ui, sans-serif; color:#111; background:#fff; line-height:1.6; }
+    header { border-bottom:1px solid #ddd; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; background:#fff; }
+    nav a { margin-left:16px; text-decoration:none; color:#111; }
+    nav a:hover { text-decoration:underline; }
+    .container { max-width:960px; margin:0 auto; padding:24px; }
+    h1 { margin:0 0 8px; }
+    .paper { border:1px solid #e6e6e6; border-radius:12px; padding:16px; margin:12px 0 16px; }
+    .paper h3 { margin:0 0 6px; font-size:18px; }
+    .meta { color:#666; font-size:14px; margin-bottom:8px; }
+    .links { margin-top:8px; font-size:15px; }
+    .links a { text-decoration:underline; }
+    p { text-align: justify; text-justify: inter-word; }
+    footer { border-top:1px solid #ddd; margin-top:40px; }
+    .foot { max-width:960px; margin:0 auto; padding:16px 24px; font-size:14px; display:flex; justify-content:space-between; color:#666; }
+  </style>
+</head>
+<body>
+  <header>
+    <div><a href="index.html" class="no-style-link"><strong>Elena Boni</strong></a></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Research</h1>
+
+  <section id="wp" class="container">
+      <h2>Working Papers</h2>
+    
+    <!-- EU Taxonomy working paper -->
+    <article class="paper">
+      <h3>Market Reactions to Mandatory Climate Disclosure: Evidence from Changes in the EU Taxonomy</h3> <p>with <a href="https://sites.google.com/view/marietheres-vonschickfus/home" target="_blank" class="no-style-link">Marie-Theres von Schickfus </a> </p>
+      <p>
+        Mandatory disclosure of environmental information has become a popular regulatory tool, aiming to reduce information asymmetries between firms and financial markets. 
+        This paper examines market reactions to mandatory climate disclosure due to the EU Taxonomy regulation, which requires companies to report according to a standardized classification system. 
+        Based on sector classification codes, activities are labeled as “Taxonomy-eligible” and can attain the label of “Taxonomy-aligned” if they fulfill performance criteria. 
+        Applying an event study methodology, we exploit the variation in sectors defined as eligible following amendments to the initially communicated eligible sectors. 
+        We find a significant negative stock market reaction to the amendment in 2023, which added subsectors in aviation and automobile manufacturing. 
+        The results are consistent with the equity market perceiving net costs for firms which are required to disclose under the EU Taxonomy, due to implementation costs or reputational risks. 
+        These findings are relevant in the discussion of the impacts of sustainable finance policies. 
+      </p>
+        <a href="pdfs/paper-one.pdf" target="_blank" rel="noopener">PDF</a>
+    </article>
+
+    
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot">
+      <span>© <span id="year"></span> Elena Boni</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
