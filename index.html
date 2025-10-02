@@ -48,9 +48,12 @@
       .split { flex-direction: row; align-items: center; }
     }
     .split img {
-      max-width: 100%;
+      max-width: 280px; 
+      width: 100%;        /* keeps it responsive on smaller screens */
+      height: auto;       /* keeps aspect ratio */
       border-radius: 12px;
     }
+
     .split .bio {
       flex: 1;
       padding: 0 16px;
