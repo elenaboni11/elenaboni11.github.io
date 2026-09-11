@@ -7,15 +7,19 @@
   <meta name="description" content="Personal Website of Elena Boni" />
   <link rel="icon" href="poppy.png" type="image/png">
   <style>
+    :root {
+      --accent: #5b6f52;
+      --text: #5b6f52;
+      --muted: #7c8f74;
+    }
     body {
       margin: 0;
       font-family: system-ui, sans-serif;
       background: #fff;
-      color: #111;
+      color: var(--text);
       line-height: 1.6;
     }
     header {
-      border-bottom: 1px solid #ddd;
       padding: 12px 24px;
       display: flex;
       justify-content: space-between;
@@ -27,9 +31,12 @@
     nav a {
       margin-left: 16px;
       text-decoration: none;
-      color: #111;
+      color: var(--text);
     }
-    nav a:hover { text-decoration: underline; }
+    nav a:hover { color: var(--accent); text-decoration: underline; }
+    h1 { color: var(--accent); }
+    h2 { color: var(--accent); }
+    strong { color: var(--accent); }
     .container {
       max-width: 960px;
       margin: 0 auto;
@@ -73,11 +80,15 @@
       font-size: 14px;
       display: flex;
       justify-content: space-between;
-      color: #666;
+      color: var(--muted);
     }
     .no-style-link {
       text-decoration: none;
       color: inherit;
+    }
+    .no-style-link:hover {
+      color: var(--accent);
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -101,7 +112,8 @@
         <h1>Elena Boni</h1>
         <p>
           I am a Ph.D student in Economics at ENS Lyon and affiliated to the Center for Economic Research on Governance, Inequality and Conflict
-          (<strong><a href="https://www.cergic-lyon.fr/" class="no-style-link">CERGIC</a></strong>). </p>
+          (<strong><a href="https://www.cergic-lyon.fr/" class="no-style-link">CERGIC</a></strong>), under the supervision of <a href="https://sites.google.com/view/sylviedemurger/home" class="no-style-link"><strong>Sylvie Démurger</strong></a> and <a href="https://www.dionissialiprantis.com/" class="no-style-link"><strong>Dionissi Aliprantis</strong></a>.
+        </p>
         <p>
           My main research interests include the economics of <strong>migration</strong> and <strong>education</strong>, with particular focus on the role of <strong>international students</strong>. 
           I am also interested in the impact of <strong>climate change</strong> on <strong>gender</strong> outcomes. </p>
@@ -116,12 +128,13 @@
       <h2>Contact</h2>
       <p> 15 Parvis René Descartes, 69007 Lyon </p>
       <p><a href="mailto:elena.boni@ens-lyon.fr" class="no-style-link">elena.boni@ens-lyon.fr</a></p>
-      <p><strong><a href="https://www.linkedin.com/in/elena-boni-a089a3232" target="_blank" class="no-style-link">LinkedIn</a>
+      <p><strong><a href="https://www.linkedin.com/in/elena-boni-a089a3232" target="_blank" class="no-style-link">LinkedIn</a></strong></p>
     </section>
   </main>
 
   <footer>
     <div class="foot">
+      <span>&copy; <span id="year"></span> Elena Boni</span>
       <a href="#top" class="no-style-link">Back to top ↑</a>
     </div>
   </footer>

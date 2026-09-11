@@ -6,21 +6,27 @@
   <title>Elena Boni — Teaching</title>
   <link rel="icon" href="poppy.png" type="image/png">
   <style>
-    body { margin:0; font-family: system-ui, sans-serif; color:#111; background:#fff; line-height:1.6; }
-    header { border-bottom:1px solid #ddd; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; background:#fff; }
-    nav a { margin-left:16px; text-decoration:none; color:#111; }
-    nav a:hover { text-decoration:underline; }
+    :root { --accent: #5b6f52; --text: #5b6f52; --muted: #7c8f74; }
+    body { margin:0; font-family: system-ui, sans-serif; color:var(--text); background:#fff; line-height:1.6; }
+    header { padding:12px 24px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; background:#fff; }
+    nav a { margin-left:16px; text-decoration:none; color:var(--text); }
+    nav a:hover { color: var(--accent); text-decoration:underline; }
     .container { max-width:960px; margin:0 auto; padding:24px; }
-    h1 { margin:0 0 8px; }
-    .teaching-entry { margin:12px 0 16px; }
-    .teaching-entry h3 { margin:0 0 4px; font-size:18px; }
-    .teaching-entry .meta { color:#666; font-size:14px; }
+    h1 { margin:0 0 8px; color: var(--accent); }
+    strong { color: var(--accent); }
+    .teaching-entry { display:flex; gap:16px; margin:16px 0; }
+    .teaching-entry .dates { flex:0 0 140px; color: var(--accent); font-weight: 600; }
+    .teaching-entry .desc { flex:1; }
     p { text-align: justify; text-justify: inter-word; margin-bottom: 0; }
     footer { margin-top:40px; }
-    .foot { max-width:960px; margin:0 auto; padding:16px 24px; font-size:14px; display:flex; justify-content:space-between; color:#666; }
+    .foot { max-width:960px; margin:0 auto; padding:16px 24px; font-size:14px; display:flex; justify-content:space-between; color:var(--muted); }
     .no-style-link {
       text-decoration: none;
       color: inherit;
+    }
+    .no-style-link:hover {
+      color: var(--accent);
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -42,20 +48,20 @@
 
       <!-- Course -->
       <div class="teaching-entry">
-        <h3>Introduction to R</h3>
-        <span class="meta">Lecturer &middot; ENS de Lyon &middot; Graduate &middot; Fall 2026 </span>
+        <span class="dates">2026 — Pres.</span>
+        <span class="desc">Lecturer, Introduction to R (ENS de Lyon, Graduate)</span>
       </div>
 
       <!-- Course -->
       <div class="teaching-entry">
-        <h3>Thesis Workshop</h3>
-        <span class="meta">Lecturer &middot; ENS de Lyon &middot; Graduate &middot; Fall 2026 </span>
+        <span class="dates">2026 — Pres.</span>
+        <span class="desc">Lecturer, Thesis Workshop (ENS de Lyon, Graduate)</span>
       </div>
 
       <!-- Course -->
       <div class="teaching-entry">
-        <h3>Projects in Economics</h3>
-        <span class="meta">Teaching Assistant &middot; ENS de Lyon &middot; Undergraduate &middot; Spring 2026 Spring 2027 </span>
+        <span class="dates">2026 — 2027</span>
+        <span class="desc">Teaching assistant, Projects in Economics (ENS de Lyon, Undergraduate)</span>
       </div>
 
     </section>
@@ -63,6 +69,7 @@
 
   <footer>
     <div class="foot">
+      <span>&copy; <span id="year"></span> Elena Boni</span>
       <a href="#top" class="no-style-link">Back to top ↑</a>
     </div>
   </footer>

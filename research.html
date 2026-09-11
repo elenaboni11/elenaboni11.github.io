@@ -6,20 +6,27 @@
   <title>Elena Boni — Research</title>
   <link rel="icon" href="poppy.png" type="image/png">
   <style>
-    body { margin:0; font-family: system-ui, sans-serif; color:#111; background:#fff; line-height:1.6; }
-    header { border-bottom:1px solid #ddd; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; background:#fff; }
-    nav a { margin-left:16px; text-decoration:none; color:#111; }
-    nav a:hover { text-decoration:underline; }
+    :root { --accent: #5b6f52; --text: #5b6f52; --muted: #7c8f74; }
+    body { margin:0; font-family: system-ui, sans-serif; color:var(--text); background:#fff; line-height:1.6; }
+    header { padding:12px 24px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; background:#fff; }
+    nav a { margin-left:16px; text-decoration:none; color:var(--text); }
+    nav a:hover { color: var(--accent); text-decoration:underline; }
     .container { max-width:960px; margin:0 auto; padding:24px; }
-    h1 { margin:0 0 8px; }
+    h1 { margin:0 0 8px; color: var(--accent); }
+    h2 { color: var(--accent); }
+    strong { color: var(--accent); }
     .wip-entry { margin:12px 0 16px; }
     .wip-entry h3 { margin:0 0 4px; font-size:18px;}
     p { text-align: justify; text-justify: inter-word; margin-bottom: 0;}
     footer { margin-top:40px; }
-    .foot { max-width:960px; margin:0 auto; padding:16px 24px; font-size:14px; display:flex; justify-content:space-between; color:#666; }
+    .foot { max-width:960px; margin:0 auto; padding:16px 24px; font-size:14px; display:flex; justify-content:space-between; color:var(--muted); }
     .no-style-link {
       text-decoration: none;
       color: inherit;
+    }
+    .no-style-link:hover {
+      color: var(--accent);
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -47,7 +54,7 @@
 
     <!-- Salinity GBV -->
     <div class="wip-entry">
-      <h3>Climate Change, Migration, and Women Empowerment </h3>
+      <h3>From Salinity to Mobility: Climate Change, Migration, and Women's Empowerment in Egypt</h3>
       <em>with Sherry Banyout </a></em>
     </div>
 
@@ -62,6 +69,7 @@
 
   <footer>
     <div class="foot">
+      <span>&copy; <span id="year"></span> Elena Boni</span>
       <a href="#top" class="no-style-link">Back to top ↑</a>
     </div>
   </footer>
