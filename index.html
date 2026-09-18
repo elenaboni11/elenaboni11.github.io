@@ -53,13 +53,14 @@
       gap: 24px;
     }
     @media(min-width: 720px) {
-      .split { flex-direction: row; align-items: center; }
+      .split { flex-direction: row; align-items: flex-start; }
     }
     .split img {
-      max-width: 340px; 
+      max-width: 340px;
       width: 100%;        /* keeps it responsive on smaller screens */
       height: auto;       /* keeps aspect ratio */
       border-radius: 12px;
+      margin-top: 100px;
     }
 
     .split .bio {
