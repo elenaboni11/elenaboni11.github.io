@@ -54,13 +54,13 @@
     }
     @media(min-width: 720px) {
       .split { flex-direction: row; align-items: flex-start; }
+      .split img { margin-top: 100px; } /* line up photo with text on desktop only */
     }
     .split img {
       max-width: 340px;
       width: 100%;        /* keeps it responsive on smaller screens */
       height: auto;       /* keeps aspect ratio */
       border-radius: 12px;
-      margin-top: 100px;
     }
 
     .split .bio {
@@ -90,6 +90,11 @@
     .no-style-link:hover {
       color: var(--accent);
       text-decoration: underline;
+    }
+    @media(max-width: 600px) {
+      header { flex-direction: column; gap: 4px; }
+      nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 20px; }
+      nav a { margin-left: 0; }
     }
   </style>
 </head>
